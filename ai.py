@@ -1,19 +1,28 @@
 import itertools
 import time
 
+
 class Searcher(object):
-
-    # 初始化
-    def __init__(self, width, hight):
-        self.col_num = width
-        self.row_num = hight
-
     O = 'O'
     X = 'X'
     B = '-'  # 代表空白
     OX_LIST = [O, X]
     FIX_WRONG_01 = 'XXX'
     FIX_WRONG_02 = 'OOO'
+    FIX_S01 = ('-XX-', 'OXXO')
+    FIX_S02 = ('XX-', 'XXO')
+    FIX_S03 = ('-XX', 'OXX')
+    FIX_S04 = ('-OO-', 'XOOX')
+    FIX_S05 = ('OO-', 'OOX')
+    FIX_S06 = ('-OO', 'XOO')
+    FIX_S07 = ('X-X', 'XOX')
+    FIX_S08 = ('O-O', 'OXO')
+    FIX_GS = (FIX_S01, FIX_S02, FIX_S03, FIX_S04, FIX_S05, FIX_S06, FIX_S07, FIX_S08)
+
+    # 初始化
+    def __init__(self, width, hight):
+        self.col_num = width
+        self.row_num = hight
 
     def show(self, note, data):
         print(note)
@@ -31,15 +40,6 @@ class Searcher(object):
         else:
             return self.B
 
-    FIX_S01 = ('-XX-', 'OXXO')
-    FIX_S02 = ('XX-', 'XXO')
-    FIX_S03 = ('-XX', 'OXX')
-    FIX_S04 = ('-OO-', 'XOOX')
-    FIX_S05 = ('OO-', 'OOX')
-    FIX_S06 = ('-OO', 'XOO')
-    FIX_S07 = ('X-X', 'XOX')
-    FIX_S08 = ('O-O', 'OXO')
-    FIX_GS = (FIX_S01, FIX_S02, FIX_S03, FIX_S04, FIX_S05, FIX_S06, FIX_S07, FIX_S08)
 
     def _search_string(self, data):
         _fish_got = False
