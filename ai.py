@@ -139,12 +139,27 @@ class Searcher(object):
         return False
 
     def _validate_ok_(self, arr_data):
+        return self._validate_ok_row(arr_data) and self._validate_ok_col(arr_data)
+
+    def _validate_ok_row(self, arr_data):
         for i in range(self.row_num):
             str = ''
             str = str.join(arr_data[i])
-            if str.count(self.B) > 0:
+            if str.count(self.B) > 0 or not self._validate_num_(str, self.col_num):
                 return False
         return True
+
+    def _validate_ok_col(self, arr_data):
+        cols_list = []
+        for i in range(self.col_num):
+            str = ''
+            for j in range(self.row_num):
+                str = str + arr_data[j][i]
+            if str.find(self.B) > 0 or not self._validate_num_(str, self.row_num):
+                return False
+        return True
+
+
 
     def _complete_rows(self, arr_data):
         rows_list = []
@@ -247,7 +262,7 @@ class Searcher(object):
         self.show('before:', arr_data)
         done = False
         t1 = time.time()
-        for i in range(3):
+        for i in range(10):
             self._search_row(arr_data)
             self._search_col(arr_data)
             t2 = time.time()

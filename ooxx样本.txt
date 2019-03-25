@@ -173,6 +173,24 @@ O X O X O X O X O X X O X O X O X O
 X O X O X O X O X O O X O O X X O X
 X O O X O X X O O X O X O X O X O X
 
+困难第30题：
+
+----O-OO--
+--O-O-----
+-X-----XX-
+-----O----
+X-X-------
+-XX---O---
+X-------O-
+--X-----OO
+-O--------
+X-------X-
+----O-----
+-O-X-X----
+------O-X-
+-X--O-----
+
+
 
 
 
