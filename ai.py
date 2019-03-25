@@ -1,12 +1,11 @@
 import itertools
-import time
 
 
 class Searcher(object):
     O = 'O'
     X = 'X'
     B = '-'  # 代表空白
-    OX_LIST = [O, X]
+    OX_LIST = [X, O]
     FIX_WRONG_01 = 'XXX'
     FIX_WRONG_02 = 'OOO'
     FIX_S01 = ('-XX-', 'OXXO')
@@ -138,6 +137,14 @@ class Searcher(object):
                 return True
         return False
 
+    def _all_full_(self, arr_data):
+        for i in range(self.row_num):
+            str = ''
+            str = str.join(arr_data[i])
+            if str.count(self.B) > 0:
+                return False
+        return True
+
     def _validate_ok_(self, arr_data):
         return self._validate_ok_row(arr_data) and self._validate_ok_col(arr_data)
 
@@ -158,8 +165,6 @@ class Searcher(object):
             if str.find(self.B) > 0 or not self._validate_num_(str, self.row_num):
                 return False
         return True
-
-
 
     def _complete_rows(self, arr_data):
         rows_list = []
@@ -258,27 +263,52 @@ class Searcher(object):
             self._search_col(arr_data)
             self._search_row_update(arr_data)
 
+    def _set_one_char_(self, arr_data, repeat_num, char):
+        num = 0
+        for i in range(self.col_num):
+            for j in range(self.row_num):
+                if arr_data[j][i] == self.B:
+                    if num == repeat_num:
+                        arr_data[j][i] = char
+                        return True
+                    num = num + 1
+        return False
+
+    def _copy_array_(self, arr_data):
+        new_arr_data = [[] for k in range(self.row_num)]
+        for i in range(self.row_num):
+            for j in range(self.col_num):
+                new_arr_data[i].append(arr_data[i][j])
+        return new_arr_data
+
     def search(self, arr_data):
-        self.show('before:', arr_data)
-        done = False
-        t1 = time.time()
-        for i in range(10):
+        self.show('before search:', arr_data)
+        for i in range(5):
             self._search_row(arr_data)
             self._search_col(arr_data)
-            t2 = time.time()
-            print('replace:', t2-t1)
             self._search_row_update(arr_data)
             self._search_col_update(arr_data)
-            t3 = time.time()
-            print('try:', t3-t2)
             if self._validate_ok_(arr_data):
-                print('循环次数：', i)
-                self.show('done:', arr_data)
-                done = True
+                print('小循环：', i)
+                self.show('success:', arr_data)
+                return True
                 break
-        if not done:
-            self.show('fail:', arr_data)
-
+        if self._all_full_(arr_data):
+            print('all_full and wrong,over!')
+            print()
+            return False
+        for x in self.OX_LIST:
+            for k in range(5):
+                new_arr_data = self._copy_array_(arr_data)
+                print('char and position', x, k)
+                self.show('before char replace:', new_arr_data)
+                if self._set_one_char_(new_arr_data, k, x):
+                    if self.search(new_arr_data):
+                        return True
+                        break
+                else:
+                    break
+        return False
 
 if __name__ == '__main__':
     # data = '--OXOXXOX-'
