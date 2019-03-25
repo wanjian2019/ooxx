@@ -1,0 +1,197 @@
+-XX---
+-----O
+X--O--
+-O----
+--X-O-
+----O-
+
+---X--
+-OO---
+O----X
+------
+-X-X-X
+X----X
+
+8X10
+----O---
+-X--O---
+---X----
+X-------
+X------O
+----O--O
+------X-
+--------
+-X--O--X
+OX------
+
+8X10
+XO---O--
+---XX-X-
+--------
+----O-O-
+O-------
+X---X--X
+--------
+-XO-----
+---XX--X
+----X---
+
+
+
+10x14
+---O------
+-XX---X-X-
+----O-----
+-----X----
+-O-O-----O
+X-------X-
+---O-O----
+---O--X---
+------X--O
+X-O--X----
+-X-X------
+-------OO-
+----O-----
+--O--XX-X-
+
+
+困难17
+-----X--O-
+----------
+O--OX--X--
+---O---X--
+----O-----
+X-X-----X-
+----X-O---
+O-O-----O-
+O-----O-O-
+--O-X-----
+---X----OO
+X----O----
+--O-------
+OXX-------
+
+-O---O-O-O--X-X--X
+--XX-O------O--X-X
+---------OX--O----
+X-X-X---X------X-X
+XO-OX----X-O--X-XX
+---------O---O----
+--------------X---
+-----------O------
+OO-----OO----O--X-
+------OO------O---
+----XO---O-----X--
+-O--XO-X-----O--X-
+--------------XO-O
+OO-------O-----O--
+----X------X----X-
+---XX--O-O-----O--
+O-O---------------
+-X--O-X--------XX-
+-----------O------
+--O----O-O-O-O----
+O-OX---O-------X-X
+O-----O----O------
+-X--O-OX--XO-O-OX-
+----------------X-
+
+X O X O X O X O X O - - X O X O O X
+O O X X O O X X O X - - O X O X O X
+O X O X O X O X X O X O X O X O X O
+X O X O X O X O X O O X O X O X O X
+X O X O X O O X O X O O X O X O X X
+O X O X O X X O X O X O X O O X X O
+O O X O X X O X O X O X O X X O O X
+X X O O X O O X X O X O X O X X O O
+O O X X O X X O O X - - X O O X X O
+X O O X O X O O X X O X O X O O X X
+- X O O X O - X O O X - - O X X O X
+- O X O X O X X O X O - X O O X X O
+X X O X O X O O X O X O O X X O X O
+O O X X O X O X O O X X O X X O O X
+O X X O X O X O O X O X X O O X X O
+X O O X X O X O X O X O O X X O O X
+O X O X O X O X - - X - - X O X O O
+O X X O O X X O - - O X X O O X X O
+X O X O X O - X O - X O O X X O O X
+X X O X O X O O X O X O X O X O X O
+O X O X O O X O X X O X O X O X O X
+O O X O X X O X O X - O - X O X O X
+X X O X O X O X O O X O X O X O X O
+X X O O X O X O X X O X O X O O X O
+
+最难组合之二：
+-X----------------
+-OX-O-OX--XO-O--XO
+------O----O-----O
+X-X-------O---XO-O
+----O-O-O-O----O--
+------O-----------
+-XX--------X-O--X-
+---------------O-O
+--O-----O-O--XX---
+-X----X------X----
+--O-----O-------OO
+O-OX--------------
+-X--O-----X-OX--O-
+--X-----O---OX----
+---O------OO------
+-X--O----OO-----OO
+------O-----------
+---X--------------
+----O---O---------
+XX-X--O-X----XO-OX
+X-X------X---X-X-X
+----O--XO---------
+X-X--O------O-XX--
+X--X-X--O-O-O---O-
+
+
+X X O O X O X O X O O X O X O O X X
+O O X X O X O X - - X O X O X O X O
+O X O O X X O X - - X O X X O X O O
+X O X O X X X O X O O X O O X O X O
+O X O X O X O X O X O X X O X O O X
+X O O X O X O O X O X X O X O X O X
+O X X O X X X O X O O X X O O X X O
+O O X O X O X X O X X O X O X O X O
+X O O X O X O X O X O X O X X O O X
+O X X O O X X O X O X O O X O X X O
+X O O X X O X X O X X O X O O X O O
+O X O X X O O X O X O O X O X O X X
+O X X O O X O O X O X X O X O X O X
+X O X X O O X X O O X O O X O O X X
+O X O O X O X O X X O O X O X O X X
+O X X O O X O X X O O X X O X X O O
+X O X X X X O X O O X X O X O O O X
+X O O X X O X O X X X X X X X X X X
+O X X O O X O X O X O X X O X O X O
+X X O X O X O O X O O X O X O X O X
+X O X O X O X O O X O X O X O X O X
+O X O X O X O X O X X O X O X O X O
+X O X O X O X O X O O X O O X X O X
+X O O X O X X O O X O X O X O X O X
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
