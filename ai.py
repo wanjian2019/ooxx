@@ -1,5 +1,5 @@
 import itertools
-
+import time
 
 class Searcher(object):
 
@@ -219,6 +219,7 @@ class Searcher(object):
                     arr_data[i][k] = x
                     k = k + 1
         if fish_got:
+            self._search_row(arr_data)
             self._search_col_update(arr_data)
 
     def _search_col_update(self, arr_data):
@@ -239,16 +240,22 @@ class Searcher(object):
                     arr_data[k][i] = x
                     k = k + 1
         if fish_got:
+            self._search_col(arr_data)
             self._search_row_update(arr_data)
 
     def search(self, arr_data):
         self.show('before:', arr_data)
         done = False
+        t1 = time.time()
         for i in range(3):
             self._search_row(arr_data)
             self._search_col(arr_data)
+            t2 = time.time()
+            print('replace:', t2-t1)
             self._search_row_update(arr_data)
             self._search_col_update(arr_data)
+            t3 = time.time()
+            print('try:', t3-t2)
             if self._validate_ok_(arr_data):
                 print('循环次数：', i)
                 self.show('done:', arr_data)

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 from ai import Searcher
+import time
 
 if __name__ == '__main__':
     data = [[] for i in range(30)]
@@ -14,6 +15,8 @@ if __name__ == '__main__':
         i = i + 1
         width = len(line)
 
+    t1 = time.time()
     searcher = Searcher(width, i)
     searcher.search(data)
-
+    t2 = time.time()
+    print('total second:', t2-t1)
