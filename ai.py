@@ -281,6 +281,15 @@ class Searcher(object):
                 new_arr_data[i].append(arr_data[i][j])
         return new_arr_data
 
+    def search_text(self, text):
+        data = [[] for i in range(30)]
+        k = 0
+        for line in text.split('\r\n'):
+            for t2 in line:
+                data[k].append(t2)
+            k = k + 1
+        return self.search(data)
+
     def search(self, arr_data):
         self.show('before search:', arr_data)
         for i in range(5):

@@ -16,6 +16,7 @@ if __name__ == '__main__':
         width = len(line)
 
     t1 = time.time()
+    print(width, i)
     searcher = Searcher(width, i)
     searcher.search(data)
     t2 = time.time()
