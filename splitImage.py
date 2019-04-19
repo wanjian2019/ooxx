@@ -35,7 +35,7 @@ def get_text_from_image(file):
     d1 = classify_gray_hist(img, img_o)
     d2 = classify_gray_hist(img, img_x)
     d3 = classify_gray_hist(img, img_b)
-    # print(file, d1, d2, d3)
+    print(file, d1, d2, d3)
     mv = max(d1, d2, d3)
     if mv == d1:
         return 'O'
@@ -62,6 +62,10 @@ def splitimage(src, rownum, colnum, dstpath):
     # if rownum > 10:
     #     k = 5
     img = Image.open(src)
+    if rownum == 14:
+        # img = img.crop((95, 222, 555, 870))
+        img = img.crop((192, 455, 1144, 1795))
+        img.save(os.path.join(dstpath, 'temp.png'))
     w, h = img.size
     if rownum <= h and colnum <= w:
         print('Original image info: %sx%s, %s, %s' % (w, h, img.format, img.mode))
@@ -73,8 +77,8 @@ def splitimage(src, rownum, colnum, dstpath):
         basename = fn[0]
         ext = fn[-1]
         num = 0
-        rowheight = h // rownum
-        colwidth = w // colnum
+        rowheight = h / rownum
+        colwidth = w / colnum
         for r in range(rownum):
             for c in range(colnum):
                 box = (c * colwidth+k, r * rowheight+k, (c + 1) * colwidth-k, (r + 1) * rowheight-k)
@@ -91,7 +95,7 @@ if __name__ == '__main__':
 
     row = 14
     col = 10
-    splitimage('file/14104.png', row, col, './file/split/')
+    splitimage('file/141020.png', row, col, './file/split/')
     data = get_text(row, col, './file/split/')
     print(data)
     searcher = Searcher(col, row)
