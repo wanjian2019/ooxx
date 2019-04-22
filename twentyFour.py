@@ -36,11 +36,11 @@ def _calculate(num_list, char_list):
     """
     found = False
     for arr1 in num_list:
+        a1 = arr1[0]
+        a2 = arr1[1]
+        a3 = arr1[2]
+        a4 = arr1[3]
         for arr2 in char_list:
-            a1 = arr1[0]
-            a2 = arr1[1]
-            a3 = arr1[2]
-            a4 = arr1[3]
             c1 = arr2[0]
             c2 = arr2[1]
             c3 = arr2[2]
